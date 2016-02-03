@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PATH="$PATH:/PATH/TO/jr-config/build/bin:/PATH/TO/jr-config/bin"
+export PATH="$PATH:/Users/jared/jr-config/build/bin:/Users/jared/jr-config/bin"
 
 git_subdir() {
     BASE=$(git rev-parse --show-toplevel 2>/dev/null)
@@ -42,6 +42,7 @@ jobs_sum() {
 
 alias j=jobs
 alias dash="apid-cli -c dashboard-metadata"
+alias ccd="cd ~/janrain-repo/CaptureCustomerDev/"
 
 . /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 . /Library/Developer/CommandLineTools/usr/share/git-core/git-prompt.sh
@@ -57,3 +58,27 @@ PROMPT_COMMAND='__git_ps1 "$(jobs_sum)\[\e[1;38;5;22m\]\u\[\e[0m\] $(git_subdir)
 complete -o default -W "logs.janrain.com logs-eu.janrain.com 3.dev-app.janraincapture.com 1.app.janraincapture.com pse.janrain.com 2.test-app.janraincapture.com 1.eu-app.janraincapture.com 1.au-app.janraincapture.com customer-dev.janrain.com capture-data-migration.janrain.com capture-data-migration-eu.janrain.com build.janraincapture.com capture-data-migration-au.janrain.com ubu1.local waldo.janrain.com jump-cn.janrain.com 1-app-prod.cn.janrain.com logs-prod.cn.janrain.com" ssh sftp
 complete -o default -W "right bottom left" mvdock
 complete -o default -W "YES NO" showhidden
+eval "$(rbenv init -)"
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+export JANRAIN_USER=jstensland
+alias ctags='/usr/local/bin/ctags'
+
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
+export GOPATH="/Users/jared/gocode"
+export PATH="$GOPATH/bin:$PATH"
+
+# add android platform tools to PATH
+export PATH=$PATH:/Users/jared/Library/Android/sdk/platform-tools
+
+# used for tests in PSE Tools
+export JANRAIN_TEST_CONFIG_KEY=pse_tools_unittest
+export PATH="/usr/local/sbin:$PATH"
+
+export HOMEBREW_PREFIX="/usr/local"
+export HOMEBREW_REPOSITORY="/usr/local"
+export HOMEBREW_LIBRARY="/usr/local/Library"
+export HOMEBREW_CELLAR="/usr/local/Cellar"

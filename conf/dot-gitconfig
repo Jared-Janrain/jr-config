@@ -6,9 +6,13 @@
 	default = tracking
 
 [core]
-	excludesfile = /PATH/TO/jr-config/conf/gitignore-global
+	excludesfile = /Users/jared/Documents/Janrain-Projects/jr-config/conf/gitignore-global
 	pager = less -+$LESS -R
 	ignorecase = true
+
+[user]
+	name = Jared Stensland
+	email = jstensland@janrain.com
 
 [alias]
 	pff = pull --ff-only
